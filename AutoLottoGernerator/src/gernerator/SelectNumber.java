@@ -30,28 +30,21 @@ public class SelectNumber {
 					}
 			}
 			
-			// 중복 검사
+			// 중복 검사 및 선택 범위 검사
 			for(int j = 0; j < i; j++) {
-				while(numbers[i] == numbers[j]) {
-					try{
-						System.out.println("이미 선택한 숫자입니다.");
-						System.out.print( (i+1) + "번째 번호> ");
-						numbers[i] = sc.nextInt();
-						while((numbers[i] < 1 || numbers[i] > 45)) {
-							System.out.println("1 ~ 45의 숫자를 입력하세요.");
-							System.out.print( (i+1) + "번째 번호> ");
-							numbers[i] = sc.nextInt();
-						}
-					}catch(InputMismatchException e) {
-						sc.nextLine();
-						System.out.println("숫자를 입력해주세요.");
-					}
+				if(numbers[i] == numbers[j]) {
+					System.out.println("이미 선택한 숫자입니다.");
+					i--;
+				}
+					
+				if(numbers[i] < 1 || numbers[i] > 45) {
+					System.out.println("1 ~ 45의 숫자를 입력하세요.");
+					i--;
 				}
 			}
 
-			
 		}
-		SortASC();
+		SortASC();	
 	}
 	
 	public int[] getNumbers() {
