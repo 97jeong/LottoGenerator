@@ -2,9 +2,9 @@ package gernerator;
 
 public class WinningResult {
 	
-	int cnt = 0;
-	int[] winningResult = {0, 0, 0, 0, 0, 0};
-	boolean isBonus = false;
+	private int cnt = 0;
+	private int[] winningResult = {0, 0, 0, 0, 0, 0};
+	private boolean isBonus;
 	
 	public WinningResult(int[] selNumbers, int[] winningNumbers, int bonusNumber) {
 		

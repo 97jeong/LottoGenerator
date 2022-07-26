@@ -3,9 +3,8 @@ package gernerator;
 public class WinningNumber {
 	
 	static final int RANGE = 45;
-	int[] numbers = new int[6];
-	int bonusNumber = 0;
-	int temp = 0;
+	private int[] numbers = new int[6];
+	private int bonusNumber = 0;
 	
 	public WinningNumber() {
 		// 당첨번호 6개 랜덤 생성
@@ -19,8 +18,8 @@ public class WinningNumber {
 		}
 		
 		// 보너스번호 1개 랜덤 생성
-		boolean isChecked = true;
-		while(isChecked) {
+		boolean isChecked = false;
+		while(!isChecked) {
 			bonusNumber = (int)(Math.random() * RANGE) + 1;
 			for(int i = 0; i < numbers.length; i++) {
 				if(bonusNumber == numbers[i]) {
